@@ -26,6 +26,39 @@
 #define MAIN_H_
 
 #include <API.h>
+#include "math.h"
+
+//Custom Files
+#include "chassis.h"
+#include "lift.h"
+#include "lcd.h"
+#include "autonPrograms.h"
+#include "fbc.h"
+#include "fbc_pid.h"
+#include "fbc_util.h"
+#include "utils.h"
+
+
+
+// Motor Port Declarations
+#define LEFT_MOTOR_PORT 2           //Y-Cable for front and back, on seperate PTC (bank 1)
+#define RIGHT_MOTOR_PORT 9          //Y-Cable for front and back, on seperate PTC (power expander)
+#define LIFT_SHAFT_1 3              //Y-cable for L/R on seprate PTC (bank 1)
+#define LIFT_SHAFT_2 8              //Y-cable for L/R on seprate PTC (bank 2)
+#define ACTUATOR_PORT 7             //On PTC (bank 2)
+
+//IME Port Decalrations 0-X
+#define IME_LIFT_SHAFT 0
+#define IME_ACTUATOR 1
+
+#define NUMBER_OF_IME 2
+
+//FBC Declarations
+fbc_t liftFBC;
+fbc_pid_t liftPID;
+
+fbc_t actuatorFBC;
+fbc_pid_t actuatorPID;
 
 // Allow usage of this file in C++ programs
 #ifdef __cplusplus
